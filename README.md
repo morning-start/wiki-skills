@@ -86,6 +86,13 @@ description: 技能描述
 | `detect-changes` | 检测技能变更 |
 | `generate-notes` | 生成发布说明 |
 
+## 技能列表
+
+| 技能名称 | 版本 | 描述 | 标签 |
+|---------|------|------|------|
+| [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力 | design-pattern, architecture, code-review, refactoring |
+
 ## 文档
 
-- [CI/CD 使用指南](./docs/CICD.md) - 构建和发布流程
+- [CI/CD 使用指南](./.github/CICD.md) - 构建和发布流程
+- [Agent 工作流指南](./AGENTS.md) - Agent 操作规范
