@@ -1,288 +1,483 @@
 ---
 name: project-wiki
-version: 6.4.0
-description: 智能项目知识助手，支持基础文档生成（README/ROADMAP/CHANGELOG/ARCHITECTURE）、文档流程管理和知识库查询
-tags: [project-wiki, documentation, knowledge-base, templates]
+version: 7.1.0
+description: 智能项目知识助手，支持模板 + 脚本快速生成标准文档、文档流程管理和知识库查询
+tags: [project-wiki, documentation, knowledge-base, templates, generator]
 ---
 
 # ProjectWiki - 智能项目知识助手
 
-ProjectWiki 是一个智能项目知识助手，支持基础文档生成、文档流程管理和知识库查询。
+## 任务目标
+
+ProjectWiki 是一个智能项目知识助手，帮助你快速生成标准项目文档、管理文档生命周期和查询技术知识。
+
+**核心价值**:
+- 🚀 **快速生成**: 5 分钟内生成 README、ARCHITECTURE 等标准文档
+- 📋 **模板丰富**: 18+ 标准模板，覆盖基础文档、架构设计、需求文档等
+- 🔧 **工具完善**: 交互式生成器 + 配置文件，提升文档效率
+- 📚 **知识全面**: 技术框架、设计模式、最佳实践速查
+- ✅ **质量保证**: 7 大类一致性检查，确保文档质量
+
+---
+
+## 快速上手（5 分钟）
+
+### 1. 生成 README 文档
+
+```bash
+# 创建配置文件
+cat > config.yaml << EOF
+project_name: "My Project"
+username: "octocat"
+version: "1.0.0"
+EOF
+
+# 生成 README
+uv run python scripts/generate_doc.py \
+  --template basic/README.md \
+  --output README.md \
+  --config config.yaml
+```
+
+### 2. 查看可用模板
+
+```bash
+cd project-wiki
+uv run python scripts/generate_doc.py --list
+```
+
+### 3. 生成架构文档
+
+```bash
+uv run python scripts/generate_doc.py \
+  --template architecture/ARCHITECTURE.md \
+  --output ARCHITECTURE.md \
+  --config config.yaml
+```
+
+**完成!** 现在你有了 README.md 和 ARCHITECTURE.md 两个标准文档。
 
 ---
 
 ## 核心能力
 
-1. **基础文档生成**: README、ROADMAP、CHANGELOG、ARCHITECTURE
-2. **文档流程管理**: 生成、更新、修改、完善文档，包含文档管理流程、评审、健康度检查
-3. **知识库查询**: 技术框架、设计模式、最佳实践速查
-4. **文档一致性检查**: 术语命名、内容逻辑、格式结构、数据参数、图表文字、角色权限、时间进度
-5. **项目类型文档指南**: 前端、后端、全栈、移动端、桌面端、CLI/TUI、游戏项目差异化文档推荐
-6. **文档管理流程**: 6 阶段生命周期管理、角色职责、评审 checklist、工具链推荐
+### 1. 模板 + 脚本快速生成 ⭐⭐⭐⭐⭐
 
----
+**触发场景**: 新项目启动、需要快速生成标准文档时
 
-## 三步工作流程
+**输入**: 项目名称、作者等基本信息（可通过配置文件提供）
 
-### 第一步：查阅信息
+**输出**: 标准格式的 Markdown 文档
 
-1. 阅读项目结构和现有文档
-2. 查询知识库获取技术信息
-3. 识别项目类型（前端/后端/全栈/移动端/桌面端/CLI/TUI/游戏）
-4. 确定需要生成的文档类型
+**示例**:
+```bash
+# 交互式生成
+uv run python scripts/generate_doc.py \
+  --template basic/README.md \
+  --output ../my-project/README.md
+```
 
-### 第二步：执行操作
+### 2. 基础文档生成 ⭐⭐⭐⭐⭐
 
-1. 根据项目类型选择合适的文档模板和指南
-2. 根据指南编写文档内容
-3. 使用 Mermaid 绘制图表
+**触发场景**: 需要创建 README、CHANGELOG、CONTRIBUTING 等基础文档
 
-### 第三步：检查验收
+**支持文档**:
+- README.md - 项目说明
+- CHANGELOG.md - 变更日志
+- CONTRIBUTING.md - 贡献指南
+- CODE_OF_CONDUCT.md - 行为准则
+- LICENSE.md - 许可证
 
-1. 验证文档完整性
-2. 运行一致性检查（7 大类检查项）
-3. 根据项目类型检查文档完整性
-4. 确认格式规范
-5. 生成检查报告
+**示例**: 见"快速上手"章节
 
----
+### 3. 架构设计文档生成 ⭐⭐⭐⭐
 
-## 参考文档
+**触发场景**: 需要设计系统架构、API 接口、详细设计时
 
-### 文档指南
+**支持模板**:
+- ARCHITECTURE.md - 系统架构
+- api-template.md - API 接口文档
+- design-doc-template.md - 详细设计文档
 
-| 文档                                                                              | 用途             | 何时使用             |
-| --------------------------------------------------------------------------------- | ---------------- | -------------------- |
-| [guides/README.md](references/guides/README.md)                                   | 文档编写指南索引 | 编写任何文档前       |
-| [guides/architecture-doc-guide.md](references/guides/architecture-doc-guide.md)   | 架构文档指南     | 编写 ARCHITECTURE.md |
-| [guides/design-doc-guide.md](references/guides/design-doc-guide.md)               | 设计文档指南     | 编写设计文档         |
-| [guides/functional-doc-guide.md](references/guides/functional-doc-guide.md)       | 功能文档指南     | 编写功能文档         |
-| [guides/api-doc-guide.md](references/guides/api-doc-guide.md)                     | API 文档指南     | 编写 API 文档        |
-| [guides/cicd-guide.md](references/guides/cicd-guide.md)                           | CI/CD 文档指南   | 编写部署文档         |
-| [guides/changelog-guide.md](references/guides/changelog-guide.md)                 | 变更日志指南     | 编写 CHANGELOG       |
-| [guides/roadmap-guide.md](references/guides/roadmap-guide.md)                     | 路线图指南       | 编写 ROADMAP         |
-| [guides/consistency-check-guide.md](references/guides/consistency-check-guide.md) | 一致性检查指南   | 文档质量检查时       |
+**示例**:
+```bash
+uv run python scripts/generate_doc.py \
+  --template architecture/api-template.md \
+  --output wiki/api.md \
+  --config config.yaml
+```
 
-### 项目类型指南
+### 4. 需求文档生成 ⭐⭐⭐⭐
 
-| 文档                                                                              | 用途                 | 何时使用                     |
-| --------------------------------------------------------------------------------- | -------------------- | ---------------------------- |
-| [guides/frontend-project-guide.md](references/guides/frontend-project-guide.md)   | 前端项目文档指南     | Vue/Svelte/SolidJS 项目      |
-| [guides/backend-project-guide.md](references/guides/backend-project-guide.md)     | 后端项目文档指南     | FastAPI/Gin/Spring Boot 项目 |
-| [guides/fullstack-project-guide.md](references/guides/fullstack-project-guide.md) | 全栈项目文档指南     | 前后端分离项目               |
-| [guides/mobile-project-guide.md](references/guides/mobile-project-guide.md)       | 移动端项目文档指南   | Flutter 项目                 |
-| [guides/desktop-project-guide.md](references/guides/desktop-project-guide.md)     | 桌面端项目文档指南   | Tauri/Wails/C#/Electron 项目 |
-| [guides/cli-tui-project-guide.md](references/guides/cli-tui-project-guide.md)     | CLI/TUI 项目文档指南 | 命令行工具项目               |
-| [guides/game-project-guide.md](references/guides/game-project-guide.md)           | 游戏项目文档指南     | Godot 游戏项目               |
+**触发场景**: 需要收集需求、编写功能说明、需求追踪时
 
-### 文档管理
+**支持模板**:
+- functional-doc-template.md - 功能需求文档
+- requirement-doc-template.md - 详细需求文档
+- rtm-template.md - 需求追踪矩阵
 
-| 文档                                                                                                  | 用途         | 何时使用           |
-| ----------------------------------------------------------------------------------------------------- | ------------ | ------------------ |
-| [guides/document-management-guide.md](references/guides/document-management-guide.md)                 | 文档管理流程 | 建立文档管理流程时 |
-| [guides/document-health-check-guide.md](references/guides/document-health-check-guide.md)             | 健康度检查   | 检查文档健康度时   |
-| [guides/document-management-anti-patterns.md](references/guides/document-management-anti-patterns.md) | 反模式警示   | 识别文档管理问题时 |
+### 5. 文档一致性检查 ⭐⭐⭐⭐
 
-### 文档模板
+**触发场景**: 版本发布前、需求变更后、定期质量检查
 
-| 文档                                                                                                          | 用途           | 何时使用               |
-| ------------------------------------------------------------------------------------------------------------- | -------------- | ---------------------- |
-| [templates/README.md](references/templates/README.md)                                                         | 文档模板索引   | 选择模板时             |
-| [templates/ARCHITECTURE.md](references/templates/ARCHITECTURE.md)                                             | 架构文档模板   | 生成 ARCHITECTURE.md   |
-| [templates/CHANGELOG.md](references/templates/CHANGELOG.md)                                                   | 变更日志模板   | 生成 CHANGELOG.md      |
-| [templates/ROADMAP.md](references/templates/ROADMAP.md)                                                       | 路线图模板     | 生成 ROADMAP.md        |
-| [templates/consistency-checklist-template.md](references/templates/consistency-checklist-template.md)         | 一致性检查清单 | 执行一致性检查         |
-| [templates/rtm-template.md](references/templates/rtm-template.md)                                             | 需求追踪矩阵   | 需求 - 设计 - 测试对齐 |
-| [templates/document-review-checklist.md](references/templates/document-review-checklist.md)                   | 文档评审清单   | 文档评审时             |
-| [templates/lightweight-doc-management-process.md](references/templates/lightweight-doc-management-process.md) | 轻量级流程     | 中小团队快速落地时     |
+**检查项**: 术语命名、内容逻辑、格式结构、数据参数、图表文字、角色权限、时间进度
 
-### 知识库
+**示例**:
+```bash
+# 使用一致性检查清单
+uv run python scripts/check_consistency.py \
+  --docs README.md,ARCHITECTURE.md,CHANGELOG.md
+```
 
-| 文档                                                                                        | 用途         | 何时使用                 |
-| ------------------------------------------------------------------------------------------- | ------------ | ------------------------ |
-| [knowledge/README.md](references/knowledge/README.md)                                       | 知识库索引   | 查询知识库时             |
-| [knowledge/frameworks.md](references/knowledge/frameworks.md)                               | 框架速查     | 技术选型时               |
-| [knowledge/patterns.md](references/knowledge/patterns.md)                                   | 设计模式速查 | 架构设计时               |
-| [knowledge/principles.md](references/knowledge/principles.md)                               | 设计原则     | 面向对象设计时           |
-| [knowledge/consistency-rules.md](references/knowledge/consistency-rules.md)                 | 一致性规则   | 了解检查规则和自动化建议 |
-| [knowledge/project-type-recognition.md](references/knowledge/project-type-recognition.md)   | 项目类型识别 | 识别项目类型时           |
-| [knowledge/document-management-tools.md](references/knowledge/document-management-tools.md) | 工具链指南   | 选择文档管理工具时       |
+### 6. 项目类型指南 ⭐⭐⭐
 
----
+**触发场景**: 针对特定类型项目（前端/后端/全栈等）编写文档
 
-## 文档类型速查
+**支持类型**: 前端、后端、全栈、移动端、桌面端、CLI/TUI、游戏项目
 
-| 文档         | 文件名            | 用途               |
-| ------------ | ----------------- | ------------------ |
-| README       | `README.md`       | 项目介绍和快速开始 |
-| ROADMAP      | `ROADMAP.md`      | 项目规划和里程碑   |
-| CHANGELOG    | `CHANGELOG.md`    | 版本变更记录       |
-| ARCHITECTURE | `ARCHITECTURE.md` | 系统架构设计       |
-| API 文档     | `wiki/api.md`     | API 接口说明       |
-| 设计文档     | `wiki/design.md`  | 详细设计说明       |
+### 7. 知识库查询 ⭐⭐⭐
+
+**触发场景**: 技术选型、架构设计、需要最佳实践参考时
+
+**知识库内容**:
+- 技术框架速查
+- 设计模式速查
+- 设计原则速查
+- 一致性规则
+- 工具链指南
 
 ---
 
 ## 使用示例
 
-### 示例 1：生成项目文档
+### 场景 1: 快速生成项目文档（推荐）
 
-**需求**: 为新项目生成完整文档
+适用于新项目快速启动。
 
-**第一步：查阅信息**
+```bash
+# 1. 准备配置文件
+cat > doc-config.yaml << EOF
+project_name: "Awesome Project"
+username: "your-username"
+version: "1.0.0"
+description: "项目描述"
+contact_email: "contact@example.com"
+EOF
 
-```
-1. 分析项目结构
-   - 项目类型: Web应用
-   - 技术栈: React + FastAPI
-   - 复杂度: 中等
-
-2. 查询知识库
-   - 阅读 [knowledge/frameworks.md](references/knowledge/frameworks.md)
-   - 了解 React 和 FastAPI 最佳实践
-```
-
-**第二步：执行操作**
-
-```
-1. 生成 README.md
-   - 使用 [templates/README.md](references/templates/README.md)
-   - 填写项目信息
-
-2. 生成 ARCHITECTURE.md
-   - 使用 [templates/architecture.md](references/templates/architecture.md)
-   - 绘制系统架构图
-
-3. 生成 ROADMAP.md
-   - 使用 [templates/ROADMAP.md](references/templates/ROADMAP.md)
-   - 规划开发里程碑
+# 2. 批量生成文档
+uv run python scripts/generate_doc.py -t basic/README.md -o README.md -c doc-config.yaml
+uv run python scripts/generate_doc.py -t basic/CHANGELOG.md -o CHANGELOG.md -c doc-config.yaml
+uv run python scripts/generate_doc.py -t architecture/ARCHITECTURE.md -o ARCHITECTURE.md -c doc-config.yaml
 ```
 
-**第三步：检查验收**
+**检验结果**: ✅ 3 个标准文档已生成
 
-```
-□ 所有必需文档已生成
-□ 文档格式符合规范
-□ 图表清晰可读
-□ 链接全部有效
+### 场景 2: 生成 API 文档
 
-检验结果: ✅ 通过
-```
+适用于前后端项目需要 API 接口文档。
 
----
-
-### 示例 2：版本发布前一致性检查
-
-**需求**: 发布 v5.0.0 版本前进行文档一致性检查
-
-**第一步：查阅信息**
-
-```
-1. 确定检查范围
-   - 核心文档：SKILL.md, README.md, CHANGELOG.md, ROADMAP.md
-   - 版本相关：版本号、发布日期、Git Tag
-
-2. 准备检查工具
-   - 一致性检查清单
-   - 版本检查脚本
+```bash
+# 生成 API 文档
+uv run python scripts/generate_doc.py \
+  --template architecture/api-template.md \
+  --output wiki/api.md \
+  --config doc-config.yaml
 ```
 
-**第二步：执行检查**
-
+**填写变量**:
 ```
-1. 版本号一致性检查
-   - SKILL.md: version: 5.0.0
-   - CHANGELOG.md: ## [5.0.0] - 2024-02-20
-   - Git Tag: v5.0.0
-   ✅ 版本号一致
-
-2. 日期格式检查
-   - 所有日期使用 YYYY-MM-DD 格式
-   ✅ 日期格式正确
-
-3. 使用检查清单逐项检查
-   - 术语与命名：✅
-   - 内容逻辑：✅
-   - 格式与结构：✅
-   - 数据与参数：✅
-   - 图表与文字：✅
-   - 角色与权限：✅
-   - 时间与进度：✅
+api_name (必填): User API
+endpoint (必填): /api/users
+method (必填): POST
 ```
 
-**第三步：生成报告**
+**检验结果**: ✅ API 文档已生成
 
-```
-一致性检查报告：
-- 检查日期：2024-02-20
-- 检查项数：108
-- 通过数：108
-- 通过率：100%
-- 结论：✅ 通过，可以发布
+### 场景 3: 版本发布前一致性检查
 
-检验结果：✅ 通过
-```
+适用于版本发布前确保文档一致性。
 
----
+**步骤**:
 
-### 示例 3：需求变更后一致性检查
-
-**需求**: 需求 REQ-003 发生变更，检查相关文档一致性
-
-**第一步：查阅信息**
-
-```
-1. 识别变更影响
-   - 需求文档：REQ-003 密码重置功能
-   - 影响文档：设计文档、API 文档、测试用例
-
-2. 准备追踪矩阵
-   - 查看 RTM 中 REQ-003 的关联
+1. 检查版本号一致性
+```bash
+# 检查 SKILL.md、CHANGELOG.md、Git Tag 版本号
+grep "version:" SKILL.md
+grep "## \[" CHANGELOG.md
+git tag -l
 ```
 
-**第二步：执行检查**
-
+2. 使用检查清单逐项检查
 ```
+□ 术语与命名一致性
+□ 内容逻辑正确
+□ 格式与结构规范
+□ 数据与参数准确
+□ 图表与文字一致
+□ 角色与权限清晰
+□ 时间与进度合理
+```
+
+**检验结果**: ✅ 所有检查项通过
+
+### 场景 4: 需求变更后同步更新
+
+适用于需求变更后同步更新相关文档。
+
+**步骤**:
+
 1. 更新需求文档
-   - 修改 REQ-003 描述
-   - 更新优先级和验收标准
+```bash
+# 修改 requirement-docs/REQ-003.md
+# 更新功能描述和验收标准
+```
 
 2. 同步更新设计文档
-   - 更新 3.2.3 章节
-   - 修改流程图和接口定义
-
-3. 更新 API 文档
-   - 修改 /api/reset-password 接口
-   - 更新请求/响应示例
-
-4. 更新测试用例
-   - 修改 TC-011~TC-015
-   - 添加新的测试场景
-
-5. 验证一致性
-   - 使用 RTM 验证需求 - 设计 - 测试对齐
-   - 运行一致性检查脚本
+```bash
+# 修改 design-docs/design-003.md
+# 更新 3.2.3 章节和接口定义
 ```
 
-**第三步：验证结果**
+3. 验证一致性
+```bash
+# 使用 RTM 验证需求 - 设计 - 测试对齐
+uv run python scripts/verify_rtm.py
+```
+
+**检验结果**: ✅ 文档一致性已验证
+
+### 场景 5: 查询技术框架信息
+
+适用于技术选型时快速了解框架信息。
+
+```bash
+# 查阅知识库
+cat references/knowledge/frameworks.md
+
+# 查找特定框架
+grep -A 10 "React" references/knowledge/frameworks.md
+```
+
+**获取信息**:
+- 框架特点
+- 适用场景
+- 最佳实践
+- 配置示例
+
+**检验结果**: ✅ 获取所需信息
+
+---
+
+## 工作流程
+
+### 简化版流程
 
 ```
-RTM 更新后状态：
-| 需求 ID | 设计章节 | 实现模块 | 测试用例 | 状态 |
-|---------|---------|---------|---------|------|
-| REQ-003 | 3.2.3 ✅ | UserController.resetPassword ✅ | TC-011~015 ✅ | 已验证 ✅ |
-
-检验结果：✅ 通过
+1. 选择模板 → 2. 填写变量 → 3. 生成文档
 ```
+
+### 详细版流程
+
+#### 第一步：查阅信息
+
+1. 分析项目类型（前端/后端/全栈等）
+2. 确定需要的文档类型
+3. 查阅知识库获取最佳实践
+
+#### 第二步：执行操作
+
+1. 选择对应模板
+2. 使用生成器或手动填写
+3. 生成文档初稿
+
+#### 第三步：检查验收
+
+1. 验证文档完整性
+2. 运行一致性检查
+3. 确认格式规范
+4. 生成检查报告
+
+---
+
+## 参考文档
+
+### 高频使用
+
+| 文档 | 用途 | 路径 |
+|------|------|------|
+| 快速开始 | 5 分钟上手 | [QUICKSTART.md](QUICKSTART.md) |
+| 使用指南 | 详细说明 | [scripts/README.md](scripts/README.md) |
+| 模板索引 | 查看所有模板 | [templates/](templates/) |
+
+### 中频使用
+
+| 文档 | 用途 | 路径 |
+|------|------|------|
+| 文档指南索引 | 编写指南 | [references/guides/](references/guides/) |
+| 架构文档指南 | 编写 ARCHITECTURE | [guides/architecture-doc-guide.md](references/guides/architecture-doc-guide.md) |
+| API 文档指南 | 编写 API 文档 | [guides/api-doc-guide.md](references/guides/api-doc-guide.md) |
+
+### 低频使用
+
+| 文档 | 用途 | 路径 |
+|------|------|------|
+| 项目类型指南 | 特定类型项目 | [references/guides/](references/guides/) |
+| 文档管理指南 | 建立管理流程 | [guides/document-management-guide.md](references/guides/document-management-guide.md) |
+| 知识库 | 技术参考 | [references/knowledge/](references/knowledge/) |
+
+---
+
+## 常见问题（FAQ）
+
+### Q1: 找不到模板怎么办？
+
+**A**: 使用 `--list` 命令查看所有可用模板：
+
+```bash
+uv run python scripts/generate_doc.py --list
+```
+
+确保模板路径正确，例如 `basic/README.md`。
+
+### Q2: 配置文件不生效怎么办？
+
+**A**: 检查以下几点：
+
+1. 配置文件格式是否正确（YAML/JSON）
+2. 变量名是否与模板中的一致
+3. 使用 `--config` 参数指定正确路径
+
+```bash
+# 检查配置文件
+cat config.yaml
+
+# 使用配置
+uv run python scripts/generate_doc.py --config config.yaml ...
+```
+
+### Q3: 变量未替换怎么办？
+
+**A**: 确保变量格式正确：
+
+- 正确：`{{variable_name}}`
+- 错误：`{variable_name}` 或 `{{variableName}}`
+
+检查模板中的变量名，确保完全匹配。
+
+### Q4: 如何自定义模板？
+
+**A**: 有两种方式：
+
+1. **复制模板修改**:
+```bash
+cp templates/basic/README.md my-custom-template.md
+# 编辑 my-custom-template.md
+```
+
+2. **创建自定义目录**:
+```bash
+mkdir -p templates/custom
+# 将自定义模板放在 templates/custom/ 目录
+```
+
+### Q5: 如何批量生成文档？
+
+**A**: 创建批量生成脚本：
+
+```bash
+#!/bin/bash
+# generate-all.sh
+
+CONFIG="config.yaml"
+GENERATOR="scripts/generate_doc.py"
+
+uv run python $GENERATOR -t basic/README.md -o README.md -c $CONFIG
+uv run python $GENERATOR -t basic/CHANGELOG.md -o CHANGELOG.md -c $CONFIG
+uv run python $GENERATOR -t architecture/ARCHITECTURE.md -o ARCHITECTURE.md -c $CONFIG
+
+echo "✅ 所有文档已生成"
+```
+
+执行：
+```bash
+chmod +x generate-all.sh
+./generate-all.sh
+```
+
+### Q6: 如何更新已生成的文档？
+
+**A**: 直接编辑生成的文件，或重新运行生成器（会提示是否覆盖）：
+
+```bash
+# 重新生成（提示覆盖）
+uv run python scripts/generate_doc.py \
+  --template basic/README.md \
+  --output README.md \
+  --config config.yaml
+```
+
+### Q7: 支持哪些配置文件格式？
+
+**A**: 支持 YAML 和 JSON 格式：
+
+- YAML: `config.yaml`（推荐）
+- JSON: `config.json`
+
+示例见 [config.example.yaml](scripts/config.example.yaml)。
 
 ---
 
 ## 注意事项
 
-- **标准化优先**: 所有文档遵循项目规范
+- **使用生成器**: 优先使用 `generate_doc.py` 快速生成标准文档
+- **标准化优先**: 使用统一的变量格式 `{{variable_name}}`
 - **渐进式完善**: 从核心文档开始，逐步完善
 - **保持一致性**: 确保术语、版本、配置在各文档间一致
 - **及时更新**: 代码变更时同步更新文档
-- **定期验证**: 版本发布前、需求变更后必须进行一致性检查
-- **使用工具**: 充分利用自动化检查工具提升效率
-- **文档评审**: 重要文档变更需经过同行评审和一致性检查
+- **定期验证**: 版本发布前必须进行一致性检查
+- **使用工具**: 充分利用自动化检查工具
+- **文档评审**: 重要文档变更需经过同行评审
+
+---
+
+## 命令速查
+
+```bash
+# 列出模板
+uv run python scripts/generate_doc.py --list
+
+# 生成单个文档
+uv run python scripts/generate_doc.py -t basic/README.md -o README.md
+
+# 使用配置文件
+uv run python scripts/generate_doc.py -t basic/README.md -o README.md -c config.yaml
+
+# 标准化模板变量
+uv run python scripts/normalize_templates.py --templates-dir templates
+
+# 查看变量报告
+cat variable_report.md
+```
+
+## 模板速查
+
+| 分类 | 模板 | 用途 |
+|------|------|------|
+| **基础** | basic/README.md | 项目说明 |
+| **基础** | basic/CHANGELOG.md | 变更日志 |
+| **架构** | architecture/ARCHITECTURE.md | 系统架构 |
+| **架构** | architecture/api-template.md | API 文档 |
+| **需求** | requirements/functional-doc-template.md | 功能需求 |
+| **规划** | roadmap/ROADMAP.md | 项目路线图 |
+
+## 变量格式
+
+- `{{variable_name}}` - 普通变量
+- `{{*variable_name}}` - 必填变量
+- `{{?variable_name}}` - 可选变量
+
+---
+
+**最后更新**: 2026-03-06  
+**版本**: v7.1.0  
+**状态**: ✅ 可用

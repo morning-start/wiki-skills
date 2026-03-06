@@ -185,9 +185,9 @@ function UserCard() {}
 ```javascript
 /**
  * 获取用户信息
- * @param {number} userId - 用户 ID
+ * @param {{number}} userId - 用户 ID
  * @returns {Promise<User>} 用户信息
- * @throws {Error} 用户不存在
+ * @throws {{error}} 用户不存在
  */
 async function getUser(userId) {
   // ...

@@ -7,6 +7,53 @@
 
 ---
 
+## [2.1.0] - 2026-03-06
+
+### 优化
+
+- **优化 `project-wiki` 技能 (v7.0.0 → v7.1.0)** - 技能结构和文档质量优化
+  - 重构 SKILL.md 结构：添加任务目标、快速上手、FAQ 等章节
+  - 优化核心能力描述：为每个能力添加触发场景、输入输出说明
+  - 简化工作流程：从复杂描述简化为快速流程
+  - 增强使用示例：按 5 个场景分类，提供实际用例
+  - 添加 FAQ 章节：7 个常见问题及解决方案
+  - 优化参考文档索引：按使用频率分类（高/中/低）
+  - 添加命令速查、模板速查、变量格式速查
+  - 文档质量提升：更清晰、更易用、更实用
+
+## [2.0.0] - 2026-03-06
+
+### 新增
+
+- **新增 `project-wiki` 技能 (v7.0.0)** - 模板 + 脚本快速生成标准文档
+  - 重构模板目录结构：按 basic/architecture/requirements/knowledge/roadmap/checklists 分类
+  - 统一变量命名规范：所有模板使用 `{{variable_name}}` 格式
+  - 开发文档生成器工具：支持交互式生成和配置文件
+  - 创建 6 个目录索引 README，提供详细变量说明
+  - 标准化 76 个模板变量
+  - 提供完整使用文档和示例配置
+
+### 功能特性
+
+- **模板分类管理**：6 大分类，18 个标准模板
+- **交互式生成器**：`generate_doc.py` 命令行工具
+- **配置文件支持**：YAML/JSON 格式，预定义变量
+- **变量标准化工具**：`normalize_templates.py` 自动统一格式
+
+### 文档
+
+- [TEMPLATE_GENERATOR.md](./project-wiki/TEMPLATE_GENERATOR.md) - 模板生成器总览
+- [scripts/README.md](./project-wiki/scripts/README.md) - 生成器使用指南
+- [config.example.yaml](./project-wiki/scripts/config.example.yaml) - 配置文件示例
+
+### 变更
+
+- 更新 `project-wiki` 版本号：6.4.0 → 7.0.0 (Major 更新)
+- 添加新技能到项目 README.md 技能列表
+- 更新 SKILL.md 添加生成器功能说明
+
+---
+
 ## [1.3.0] - 2026-03-06
 
 ### 新增

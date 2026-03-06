@@ -16,32 +16,32 @@
 
 | 字段名 | 类型 | 必填 | 默认值 | 说明 | 示例 |
 |--------|------|------|--------|------|------|
-| {{field_name}} | {{type}} | {{required}} | {{default}} | {{description}} | {{example}} |
+| {{{field_name}}} | {{{type}}} | {{{required}}} | {{{default}}} | {{{description}}} | {{{example}}} |
 
 ### 枚举值说明
 
 | 字段 | 枚举值 | 说明 |
 |------|--------|------|
-| {{enum_field}} | {{value1}} | {{description}} |
-| {{enum_field}} | {{value2}} | {{description}} |
+| {{{enum_field}}} | {{{value1}}} | {{{description}}} |
+| {{{enum_field}}} | {{{value2}}} | {{{description}}} |
 
 ### 类型定义
 
 ```typescript
 // 类型定义
-interface {{ModelName}} {
-  {{field_name}}: {{type}};
-  {{field_name}}: {{type}};
+interface {{{model_name}}} {
+  {{{field_name}}}: {{{type}}};
+  {{{field_name}}}: {{{type}}};
 }
 
 // 请求类型
-interface Create{{ModelName}}Request {
-  {{field_name}}: {{type}};
+interface Create{{{model_name}}}Request {
+  {{{field_name}}}: {{{type}}};
 }
 
 // 响应类型
-interface {{ModelName}}Response {
-  {{field_name}}: {{type}};
+interface {{{model_name}}}Response {
+  {{{field_name}}}: {{{type}}};
 }
 ```
 
@@ -61,7 +61,7 @@ sequenceDiagram
     participant DB as 数据库
     participant Cache as 缓存
 
-    Client->>Gateway: {{method}} {{path}}
+    Client->>Gateway: {{{method}}} {{{path}}}
     Gateway->>Gateway: 认证与授权
     Gateway->>Service: 路由请求
     Service->>Cache: 查询缓存
@@ -90,13 +90,13 @@ sequenceDiagram
 
 ```javascript
 // 输入
-{{input_example}}
+{{{input_example}}}
 
 // 存储
-{{storage_example}}
+{{{storage_example}}}
 
 // 输出
-{{output_example}}
+{{{output_example}}}
 ```
 
 ---
@@ -116,25 +116,25 @@ sequenceDiagram
 
 | 参数名 | 类型 | 必填 | 说明 | 示例 |
 |--------|------|------|------|------|
-| {{path_param}} | {{type}} | {{required}} | {{description}} | {{example}} |
+| {{{path_param}}} | {{{type}}} | {{{required}}} | {{{description}}} | {{{example}}} |
 
 ### Query 参数
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 | 示例 |
 |--------|------|------|--------|------|------|
-| {{query_param}} | {{type}} | {{required}} | {{default}} | {{description}} | {{example}} |
+| {{{query_param}}} | {{{type}}} | {{{required}}} | {{{default}}} | {{{description}}} | {{{example}}} |
 
 ### Body 参数
 
 | 参数名 | 类型 | 必填 | 说明 | 约束 | 示例 |
 |--------|------|------|------|------|------|
-| {{body_param}} | {{type}} | {{required}} | {{description}} | {{constraint}} | {{example}} |
+| {{{body_param}}} | {{{type}}} | {{{required}}} | {{{description}}} | {{{constraint}}} | {{{example}}} |
 
 ### Header 参数
 
 | 参数名 | 类型 | 必填 | 说明 | 示例 |
 |--------|------|------|------|------|
-| Authorization | string | 是 | JWT Token | `Bearer {{token}}` |
+| Authorization | string | 是 | JWT Token | `Bearer {{{token}}}` |
 | Content-Type | string | 是 | 内容类型 | `application/json` |
 
 ---
@@ -144,33 +144,33 @@ sequenceDiagram
 ### cURL
 
 ```bash
-curl -X {{method}} '{{base_url}}{{path}}' \
+curl -X {{{method}}} '{{{base_url}}}{{{path}}}' \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer {{token}}' \
-  -d '{{request_body}}'
+  -H 'Authorization: Bearer {{{token}}}' \
+  -d '{{{request_body}}}'
 ```
 
 ### HTTP
 
 ```http
-{{method}} {{base_url}}{{path}} HTTP/1.1
+{{{method}}} {{{base_url}}}{{{path}}} HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{{token}}}
 
-{{request_body}}
+{{{request_body}}}
 ```
 
 ### JavaScript/TypeScript
 
 ```typescript
 // 使用 fetch
-const response = await fetch('{{base_url}}{{path}}', {
-  method: '{{method}}',
+const response = await fetch('{{{base_url}}}{{{path}}}', {
+  method: '{{{method}}}',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer {{token}}'
+    'Authorization': 'Bearer {{{token}}}'
   },
-  body: JSON.stringify({{request_body_object}})
+  body: JSON.stringify({{{request_body_object}}})
 });
 
 const data = await response.json();
@@ -197,10 +197,10 @@ interface SuccessResponse<T> {
 
 ```json
 {
-  "code": {{success_code}},
-  "message": "{{success_message}}",
+  "code": {{{success_code}}},
+  "message": "{{{success_message}}}",
   "data": {
-    {{response_data}}
+    {{{response_data}}}
   }
 }
 ```
@@ -209,7 +209,7 @@ interface SuccessResponse<T> {
 
 | 字段名 | 类型 | 说明 |
 |--------|------|------|
-| {{field_name}} | {{type}} | {{description}} |
+| {{{field_name}}} | {{{type}}} | {{{description}}} |
 
 ### 错误响应
 
@@ -264,17 +264,17 @@ interface ErrorResponse {
 
 ## 业务规则
 
-1. {{rule_1}}
-2. {{rule_2}}
-3. {{rule_3}}
+1. {{{rule_1}}}
+2. {{{rule_2}}}
+3. {{{rule_3}}}
 
 ---
 
 ## 注意事项
 
-- {{note_1}}
-- {{note_2}}
-- {{note_3}}
+- {{{note_1}}}
+- {{{note_2}}}
+- {{{note_3}}}
 
 ---
 
