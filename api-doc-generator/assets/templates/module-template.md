@@ -38,3 +38,46 @@
 
 - 父模块端点：{{PARENT_ENDPOINTS}}
 - 相关模块：{{RELATED_MODULES}}
+
+---
+
+# {{MODULE_NAME}} 组件组
+
+## 组件组概述
+
+{{MODULE_DESCRIPTION}}
+
+本组件组包含 {{COMPONENT_COUNT}} 个组件，主要用于 {{MODULE_PURPOSE}}。
+
+## 组件列表
+
+| 组件名称 | 类型 | 功能描述 |
+|----------|------|----------|
+{{COMPONENT_TABLE}}
+
+---
+
+{{COMPONENTS_CONTENT}}
+
+---
+
+## 相关说明
+
+### 通用 Props
+
+{{COMMON_PROPS}}
+
+### 注意事项
+
+{{NOTES}}
+
+### 使用示例
+
+{{EXAMPLES}}
+
+---
+
+## 相关组件
+
+- 父组件组：{{PARENT_COMPONENTS}}
+- 相关组件组：{{RELATED_COMPONENT_GROUPS}}

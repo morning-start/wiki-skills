@@ -54,6 +54,97 @@ Authorization: Bearer {{API_KEY}}
 无
 {{/if}}
 
+---
+
+## 前端组件文档
+
+### 组件名称
+
+{{COMPONENT_NAME}}
+
+### 组件描述
+
+{{COMPONENT_DESCRIPTION}}
+
+### Props
+
+| Prop | Type | Default | Required | Description |
+| ----- | ------ | ------- | -------- | ----------------- |
+{{PROPS_TABLE}}
+
+### Events
+
+| Event | Payload | Description |
+|-------|---------|-------------|
+{{EVENTS_TABLE}}
+
+### Slots
+
+| Slot | Description |
+|------|-------------|
+{{SLOTS_TABLE}}
+
+### 使用示例
+
+#### 基础用法
+
+```jsx
+import { {{COMPONENT_NAME}} } from '{{PROJECT_NAME}}';
+
+function Example() {
+  return (
+    <{{COMPONENT_NAME}}
+      {{#if PROPS_EXAMPLE}}
+      {{PROPS_EXAMPLE}}
+      {{/if}}
+    >
+      {{#if DEFAULT_CHILDREN}}
+      {{DEFAULT_CHILDREN}}
+      {{/if}}
+    </{{COMPONENT_NAME}}>
+  );
+}
+```
+
+#### 高级用法
+
+```jsx
+import { {{COMPONENT_NAME}} } from '{{PROJECT_NAME}}';
+
+function AdvancedExample() {
+  const [value, setValue] = useState('');
+
+  return (
+    <{{COMPONENT_NAME}}
+      {{#if PROPS_EXAMPLE}}
+      {{PROPS_EXAMPLE}}
+      {{/if}}
+      {{#if EVENTS_EXAMPLE}}
+      {{EVENTS_EXAMPLE}}
+      {{/if}}
+    >
+      {{#if DEFAULT_CHILDREN}}
+      {{DEFAULT_CHILDREN}}
+      {{/if}}
+    </{{COMPONENT_NAME}}>
+  );
+}
+```
+
+### TypeScript 类型定义
+
+```typescript
+interface {{COMPONENT_NAME}}Props {
+  {{#if TYPESCRIPT_TYPES}}
+  {{TYPESCRIPT_TYPES}}
+  {{/if}}
+}
+
+declare const {{COMPONENT_NAME}}: React.FC<{{COMPONENT_NAME}}Props>;
+```
+
+---
+
 ## 请求示例
 
 ### cURL
@@ -106,7 +197,6 @@ response = requests.{{METHOD.lower()}}(url, headers=headers, json=data)
 {{else}}
 response = requests.{{METHOD.lower()}}(url, headers=headers)
 {{/if}}
-
 result = response.json()
 print(result)
 ```

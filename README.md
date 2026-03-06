@@ -84,10 +84,10 @@ description: 技能描述
 
 ## 技能列表
 
-| 技能名称                                                    | 版本  | 描述                                                                                                                                                                        | 标签                                                   |
-| ----------------------------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| [api-doc-generator](./api-doc-generator/SKILL.md)           | 1.1.0 | 自动分析项目代码并生成符合标准格式的API文档；支持React/Vue/Angular/Svelte/Next.js/Nuxt.js等前端框架；支持Flask/FastAPI/Django/Express/NestJS/Spring Boot/Gin/Echo等后端框架 | api-doc, frontend, backend, documentation              |
-| [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力                                                                                                            | design-pattern, architecture, code-review, refactoring |
+| 技能名称                                                    | 版本  | 描述                                                                                                                                        | 标签                                                   |
+| ----------------------------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [api-doc-generator](./api-doc-generator/SKILL.md)           | 1.3.0 | 自动生成API文档，支持React/Vue/Angular/Svelte/Next.js/Nuxt.js等前端框架和Flask/FastAPI/Django/Express/NestJS/Spring Boot/Gin/Echo等后端框架 | api-doc, frontend, backend, documentation, automation  |
+| [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力                                                                            | design-pattern, architecture, code-review, refactoring |
 
 ## 文档
 
