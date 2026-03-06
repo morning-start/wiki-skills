@@ -22,13 +22,10 @@ uv sync
 ```bash
 # 构建所有技能
 uv run build-skills --all
-
 # 指定版本号
 uv run build-skills --all --version 1.0.0
-
 # 构建单个技能
 uv run build-skills --skill skill-name
-
 # 列出所有技能
 uv run build-skills --list
 ```
@@ -73,24 +70,24 @@ name: skill-name
 version: 1.0.0
 description: 技能描述
 ---
-
 # 技能文档
 ```
 
 ## 命令行工具
 
-| 命令 | 说明 |
-|------|------|
-| `build-skills` | 构建技能包 |
-| `bump-version` | 更新版本号 |
+| 命令             | 说明         |
+| ---------------- | ------------ |
+| `build-skills`   | 构建技能包   |
+| `bump-version`   | 更新版本号   |
 | `detect-changes` | 检测技能变更 |
 | `generate-notes` | 生成发布说明 |
 
 ## 技能列表
 
-| 技能名称 | 版本 | 描述 | 标签 |
-|---------|------|------|------|
-| [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力 | design-pattern, architecture, code-review, refactoring |
+| 技能名称                                                    | 版本  | 描述                                                                                                                                                                        | 标签                                                   |
+| ----------------------------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [api-doc-generator](./api-doc-generator/SKILL.md)           | 1.1.0 | 自动分析项目代码并生成符合标准格式的API文档；支持React/Vue/Angular/Svelte/Next.js/Nuxt.js等前端框架；支持Flask/FastAPI/Django/Express/NestJS/Spring Boot/Gin/Echo等后端框架 | api-doc, frontend, backend, documentation              |
+| [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力                                                                                                            | design-pattern, architecture, code-review, refactoring |
 
 ## 文档
 

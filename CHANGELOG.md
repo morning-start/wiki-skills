@@ -7,6 +7,33 @@
 
 ---
 
+## [1.1.0] - 2026-03-06
+
+### 新增
+
+- 添加 `api-doc-generator` 技能 (v1.1.0)
+  - 扩展支持主流前端框架：React、Vue、Angular、Svelte、Next.js、Nuxt.js
+  - 扩展支持主流后端框架：Django、NestJS、Spring Boot、Gin、Echo
+  - 新增前端框架参考文档：`references/frontend-frameworks.md`
+  - 新增后端框架参考文档：`references/backend-frameworks.md`
+  - 新增 API 文档最佳实践文档：`references/api-doc-best-practices.md`
+  - 更新框架识别模式文档：`references/framework-patterns.md`
+  - 提供完整的框架识别规则和参数提取方法
+  - 添加前端组件文档生成支持
+  - 添加 Next.js/Nuxt.js API 路由文档生成支持
+  - 提供 13 个使用示例，覆盖所有支持的框架
+
+### 变更
+
+- 更新 `api-doc-generator` 版本号：1.0.0 → 1.1.0
+- 更新 `api-doc-generator` 技能描述，包含所有支持的框架
+- 扩展 `api-doc-generator` 操作步骤，添加前端和后端框架分支
+- 添加框架检测优先级说明
+- 添加文档生成最佳实践
+- 添加常见问题解答
+
+---
+
 ## [0.1.0] - 2026-03-01
 
 ### 新增
