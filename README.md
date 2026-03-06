@@ -89,6 +89,7 @@ description: 技能描述
 | [project-wiki](./project-wiki/SKILL.md)                     | 7.1.0 | 智能项目知识助手，支持模板 + 脚本快速生成标准文档、文档流程管理和知识库查询                                                                 | documentation, templates, generator, knowledge-base    |
 | [api-doc-generator](./api-doc-generator/SKILL.md)           | 1.3.0 | 自动生成 API 文档，支持 React/Vue/Angular/Svelte/Next.js/Nuxt.js 等前端框架和 Flask/FastAPI/Django/Express/NestJS/Spring Boot/Gin/Echo 等后端框架 | api-doc, frontend, backend, documentation, automation  |
 | [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力                                                                            | design-pattern, architecture, code-review, refactoring |
+| [interface-data-doc-generator](./interface-data-doc-generator/SKILL.md) | 1.0.0 | 接口与数据文档生成器，自动生成API文档、数据库设计文档和通信协议规范，支持多语言多架构和文档优化分析                                          | api-doc, database-doc, protocol, documentation, generator, validation |
 | [requirements-doc-gen](./requirements-doc-gen/SKILL.md)     | 1.0.0 | 将粗糙业务描述转化为标准SRS/PRD文档，支持需求变更分析、多端需求管理与自主知识补全                                                              | requirements, srs, prd, documentation, automation     |
 | [quality-ops-doc-gen](./quality-ops-doc-gen/SKILL.md)       | 1.0.0 | 生成和优化质量与运维类文档（测试策略、部署运维、安全合规），支持多端场景、自主知识补全与需求变更分析                                              | testing, deployment, operations, security, compliance  |
 
