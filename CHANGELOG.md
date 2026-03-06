@@ -21,6 +21,19 @@
   - 添加命令速查、模板速查、变量格式速查
   - 文档质量提升：更清晰、更易用、更实用
 
+### 新增文件
+
+- 新增 `PROJECT_SUMMARY.md` - 项目总结文档
+- 新增 `QUICKSTART.md` - 快速上手指南（含速查表）
+- 新增 `SKILL_OPTIMIZATION_SUMMARY.md` - 技能优化总结
+- 新增 `TEMPLATE_GENERATOR.md` - 模板生成器文档
+- 新增 `scripts/README.md` - 脚本使用指南
+- 新增 `scripts/config.example.yaml` - 配置文件示例
+- 新增 `scripts/generate_doc.py` - 文档生成器脚本
+- 新增 `scripts/normalize_templates.py` - 模板标准化脚本
+- 新增 `variable_report.md` - 变量报告
+- 重构模板目录结构：从 `references/templates/` 迁移到 `templates/` 目录，按 6 大分类组织
+
 ## [2.0.0] - 2026-03-06
 
 ### 新增
@@ -46,6 +59,15 @@
 - [scripts/README.md](./project-wiki/scripts/README.md) - 生成器使用指南
 - [config.example.yaml](./project-wiki/scripts/config.example.yaml) - 配置文件示例
 
+### 新增文件
+
+- 新增 `project-wiki/SKILL.md` - 技能定义文件
+- 新增 `project-wiki/references/guides/` 目录下 20+ 个指南文档
+- 新增 `project-wiki/references/knowledge/` 目录下 10+ 个知识管理文档
+- 新增 `project-wiki/references/templates/` 目录下 18+ 个模板文件
+- 新增 `project-wiki/references/guides/README.md` - 指南索引
+- 新增 `project-wiki/references/knowledge/README.md` - 知识管理索引
+
 ### 变更
 
 - 更新 `project-wiki` 版本号：6.4.0 → 7.0.0 (Major 更新)
@@ -58,12 +80,13 @@
 
 ### 新增
 
-- 优化 `api-doc-generator` 技能 (v1.3.0)
-  - 添加 scripts 目录及三个脚本文件（api_scanner.py, module_classifier.py, doc_generator.py）
-  - 优化 overview-template.md，添加前端项目概述模板
-  - 优化 endpoint-template.md，添加前端组件文档模板
-  - 优化 module-template.md，添加前端组件组模板
-  - 更新 SKILL.md，添加脚本说明和更多使用示例
+- **优化 `api-doc-generator` 技能 (v1.3.0)** - 添加前端组件文档支持并优化模板
+  - 新增前端组件文档模板，支持 React/Vue/Angular/Svelte 等框架
+  - 优化 overview-template.md 添加前端项目概述模板
+  - 优化 endpoint-template.md 添加前端组件文档模板
+  - 优化 module-template.md 添加前端组件组模板
+  - 新增三个脚本文件实现文档生成流程
+  - 更新 SKILL.md 添加脚本说明和使用示例
   - 提升目录结构完整性到 100%
   - 提升模板文件实用性到 90%
   - 提升参考文档质量到 95%
@@ -82,35 +105,21 @@
 - 参考文档质量：85% → 95% (+10%)
 - 整体标准化合规性：90% → 100% (+10%)
 
+### 新增文件
+
+- 新增 `api-doc-generator/scripts/api_scanner.py` - API 扫描脚本
+- 新增 `api-doc-generator/scripts/module_classifier.py` - 模块分类脚本
+- 新增 `api-doc-generator/scripts/doc_generator.py` - 文档生成脚本
+
 ---
 
 ## [1.2.0] - 2026-03-06
 
 ### 新增
 
-- 优化 `api-doc-generator` 技能 (v1.2.0)
-  - 添加 author 字段：api-doc-generator
-  - 添加 tags 字段：[api-doc, frontend, backend, documentation, automation]
-  - 优化 description：精简到 130 字符，符合 100-150 字符规范
-  - 修正所有参考文档链接路径
-  - 提升标准化合规性到 100%
-
-### 变更
-
-- 更新 `api-doc-generator` 版本号：1.1.0 → 1.2.0
-- 提升技能标准化合规性：60% → 100% (+40%)
-- 优化描述清晰度：一般 → 良好 (+30%)
-- 修正链接有效性：0% → 100% (+100%)
-
----
-
-## [1.1.0] - 2026-03-06
-
-### 新增
-
-- 添加 `api-doc-generator` 技能 (v1.1.0)
-  - 扩展支持主流前端框架：React、Vue、Angular、Svelte、Next.js、Nuxt.js
-  - 扩展支持主流后端框架：Django、NestJS、Spring Boot、Gin、Echo
+- **优化 `api-doc-generator` 技能 (v1.2.0)** - 扩展支持主流前后端框架并添加相关文档
+  - 新增对 React、Vue、Angular、Svelte、Next.js、Nuxt.js 前端框架的支持
+  - 新增对 Django、NestJS、Spring Boot、Gin、Echo 后端框架的支持
   - 新增前端框架参考文档：`references/frontend-frameworks.md`
   - 新增后端框架参考文档：`references/backend-frameworks.md`
   - 新增 API 文档最佳实践文档：`references/api-doc-best-practices.md`
@@ -122,12 +131,42 @@
 
 ### 变更
 
-- 更新 `api-doc-generator` 版本号：1.0.0 → 1.1.0
+- 更新 `api-doc-generator` 版本号：1.1.0 → 1.2.0
 - 更新 `api-doc-generator` 技能描述，包含所有支持的框架
 - 扩展 `api-doc-generator` 操作步骤，添加前端和后端框架分支
 - 添加框架检测优先级说明
 - 添加文档生成最佳实践
 - 添加常见问题解答
+
+### 新增文件
+
+- 新增 `api-doc-generator/references/frontend-frameworks.md` - 前端框架参考
+- 新增 `api-doc-generator/references/backend-frameworks.md` - 后端框架参考
+- 新增 `api-doc-generator/references/api-doc-best-practices.md` - API 文档最佳实践
+
+---
+
+## [1.1.0] - 2026-03-06
+
+### 新增
+
+- **添加 `api-doc-generator` 技能 (v1.0.0 → v1.1.0)** - API 文档自动生成工具
+  - 文档模板：overview-template.md, module-template.md, endpoint-template.md
+  - 参考文档：doc-structure.md, framework-patterns.md
+  - 核心脚本：api_scanner.py, module_classifier.py
+  - 自动从项目代码中提取 API 信息并生成符合标准的文档
+  - 提供完整的 SKILL 文档说明使用方法和流程
+
+### 新增文件
+
+- 新增 `api-doc-generator/SKILL.md` - 技能定义文件
+- 新增 `api-doc-generator/assets/templates/overview-template.md` - 概述模板
+- 新增 `api-doc-generator/assets/templates/module-template.md` - 模块模板
+- 新增 `api-doc-generator/assets/templates/endpoint-template.md` - 端点模板
+- 新增 `api-doc-generator/references/doc-structure.md` - 文档结构指南
+- 新增 `api-doc-generator/references/framework-patterns.md` - 框架模式识别
+- 新增 `api-doc-generator/scripts/api_scanner.py` - API 扫描脚本
+- 新增 `api-doc-generator/scripts/module_classifier.py` - 模块分类脚本
 
 ---
 
@@ -135,21 +174,37 @@
 
 ### 新增
 
-- 添加 `design-pattern-advisor` 技能 (v1.1.0)
+- **添加 `design-pattern-advisor` 技能 (v1.1.0)** - 智能设计模式顾问
   - 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力
-  - 整合23种经典设计模式知识库
-  - 提供8个原子能力和4个复合能力组合
+  - 整合 23 种经典设计模式知识库
+  - 提供 8 个原子能力和 4 个复合能力组合
   - 支持代码审查、模式推荐、重构建议和架构评估
+
+### 新增文件
+
+- 新增 `design-pattern-advisor/SKILL.md` - 技能定义文件
+- 新增 `design-pattern-advisor/WORKFLOW.md` - 工作流文档
+- 新增 `design-pattern-advisor/references/` 目录下 23 个设计模式参考文档
+- 新增 `design-pattern-advisor/references/creational/` - 创建型模式（5 个）
+- 新增 `design-pattern-advisor/references/structural/` - 结构型模式（7 个）
+- 新增 `design-pattern-advisor/references/behavioral/` - 行为型模式（11 个）
 
 ### 变更
 
 - 更新项目 README.md，添加技能列表
+- 更新 CHANGELOG.md 记录新技能添加
+- 修正文档路径引用
 - 更新文档路径（docs/CICD.md → .github/CICD.md）
 - 添加 AGENTS.md 工作流指南链接
 
 ---
 
 ## [未发布]
+
+- 初始化项目结构
+- 配置 CI/CD 工作流
+- 添加项目规则和 Agent 工作流指南
+- 构建脚本和版本管理工具
 
 ---
 
