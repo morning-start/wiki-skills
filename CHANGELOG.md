@@ -7,6 +7,36 @@
 
 ---
 
+## [2.2.0] - 2026-03-06
+
+### 新增
+
+- **新增 `quality-ops-doc-gen` 技能 (v1.0.0)** - 质量与运维文档生成器
+  - 生成专业的测试策略与计划文档：包含测试类型、多端兼容性、游戏专项测试
+  - 生成部署与运维手册：包含 CI/CD 流程、容器化配置、监控告警、日志管理
+  - 生成安全合规文档：包含 GDPR/CCPA 合规、游戏版号申请、安全认证
+  - 支持多端场景：Web、移动端、桌面端、游戏应用
+  - 支持自主知识补全：可搜索最新技术和合规要求
+  - 支持需求变更分析：分析测试/运维/安全/开发影响
+  - 提供完整性检查清单：7 大类检查项，确保文档质量
+  - 提供多端测试指南：覆盖 Web、移动端、桌面端、游戏应用的测试方法
+
+### 新增文件
+
+- 新增 `quality-ops-doc-gen/SKILL.md` - 技能定义文件
+- 新增 `quality-ops-doc-gen/references/templates/test-strategy-template.md` - 测试策略文档模板
+- 新增 `quality-ops-doc-gen/references/templates/deployment-ops-template.md` - 部署运维手册模板
+- 新增 `quality-ops-doc-gen/references/templates/security-compliance-template.md` - 安全合规文档模板
+- 新增 `quality-ops-doc-gen/references/quality-ops-checklist.md` - 完整性检查清单
+- 新增 `quality-ops-doc-gen/references/multi-platform-testing-guide.md` - 多端测试指南
+
+### 变更
+
+- 更新项目 README.md，添加 `quality-ops-doc-gen` 技能到技能列表
+- 更新 CHANGELOG.md 记录新技能添加
+
+---
+
 ## [2.1.0] - 2026-03-06
 
 ### 优化
