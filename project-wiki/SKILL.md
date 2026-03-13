@@ -73,11 +73,6 @@ uv run python scripts/generate_doc.py \
 
 **示例**:
 ```bash
-# 交互式生成
-uv run python scripts/generate_doc.py \
-  --template basic/README.md \
-  --output ../my-project/README.md
-
 # 使用配置文件
 uv run python scripts/generate_doc.py \
   --template architecture/ARCHITECTURE.md \
@@ -99,12 +94,9 @@ uv run python scripts/generate_doc.py \
 
 **示例**:
 ```bash
-# 版本发布前检查
-# 1. 检查版本号一致性
+# 版本发布前检查版本号一致性
 grep "version:" SKILL.md
 grep "## \[" CHANGELOG.md
-
-# 2. 使用检查清单
 cat templates/checklists/document-review-checklist.md
 ```
 
@@ -122,9 +114,6 @@ cat templates/checklists/document-review-checklist.md
 ```bash
 # 查询 React 框架信息
 cat references/knowledge/frameworks.md | grep -A 10 "React"
-
-# 查看设计模式
-cat references/knowledge/patterns.md
 ```
 
 ---
@@ -134,16 +123,14 @@ cat references/knowledge/patterns.md
 ### 场景 1: 新项目启动
 
 ```bash
-# 1. 准备配置
 cat > config.yaml << EOF
 project_name: "Awesome Project"
 username: "your-username"
 version: "1.0.0"
 description: "一个很棒的项目"
-contact_email: "contact@example.com"
 EOF
 
-# 2. 批量生成文档
+# 批量生成文档
 uv run python scripts/generate_doc.py -t basic/README.md -o README.md -c config.yaml
 uv run python scripts/generate_doc.py -t basic/CHANGELOG.md -o CHANGELOG.md -c config.yaml
 uv run python scripts/generate_doc.py -t architecture/ARCHITECTURE.md -o ARCHITECTURE.md -c config.yaml
@@ -160,24 +147,19 @@ uv run python scripts/generate_doc.py \
   --config config.yaml
 ```
 
-**填写变量**:
-```
-api_name (必填): User API
-endpoint (必填): /api/users
-method (必填): POST
-```
+**填写变量**: api_name (必填), endpoint (必填), method (必填)
 
 **检验结果**: ✅ API 文档已生成
 
 ### 场景 3: 版本发布前检查
 
 ```bash
-# 1. 检查版本号
+# 检查版本号
 grep "version:" SKILL.md
 grep "## \[" CHANGELOG.md
 git tag -l
 
-# 2. 使用检查清单
+# 使用检查清单
 cat templates/checklists/document-review-checklist.md
 ```
 
@@ -186,21 +168,15 @@ cat templates/checklists/document-review-checklist.md
 ### 场景 4: 技术选型查询
 
 ```bash
-# 查询前端框架对比
+# 查询框架和模式
 cat references/knowledge/frameworks.md
-
-# 查询设计模式
 cat references/knowledge/patterns.md
-
-# 查询设计原则
 cat references/knowledge/principles.md
 ```
 
 **检验结果**: ✅ 获取所需信息
 
-### 场景 5: 批量生成文档
-
-创建 `generate-docs.sh`:
+### 场景 5: 批量生成脚本
 
 ```bash
 #!/bin/bash
@@ -214,12 +190,6 @@ uv run python $GENERATOR -t architecture/ARCHITECTURE.md -o ARCHITECTURE.md -c $
 echo "✅ 所有文档已生成"
 ```
 
-使用:
-```bash
-chmod +x generate-docs.sh
-./generate-docs.sh
-```
-
 ---
 
 ## 工作流程
@@ -231,7 +201,6 @@ chmod +x generate-docs.sh
 ```
 
 **详细流程**:
-
 1. **选择模板**: 根据项目类型和文档需求选择合适模板
 2. **准备配置**: 创建配置文件或交互式填写变量
 3. **生成文档**: 运行生成器，生成标准文档
@@ -278,8 +247,6 @@ chmod +x generate-docs.sh
 uv run python scripts/generate_doc.py --list
 ```
 
-确保模板路径正确，例如 `basic/README.md`。
-
 ### Q2: 配置文件不生效？
 
 **A**: 检查：
@@ -287,57 +254,21 @@ uv run python scripts/generate_doc.py --list
 2. 变量名是否与模板中的一致
 3. 使用 `--config` 参数指定正确路径
 
-```bash
-# 检查配置文件
-cat config.yaml
-
-# 使用配置
-uv run python scripts/generate_doc.py --config config.yaml ...
-```
-
 ### Q3: 变量未替换？
 
-**A**: 确保变量格式正确：
-- 正确：`{{variable_name}}`
-- 错误：`{variable_name}` 或 `{{variableName}}`
-
-检查模板中的变量名，确保完全匹配。
+**A**: 确保变量格式正确：`{{variable_name}}`（注意双大括号）
 
 ### Q4: 如何批量生成文档？
 
-**A**: 创建批量生成脚本：
-
-```bash
-#!/bin/bash
-CONFIG="config.yaml"
-GENERATOR="scripts/generate_doc.py"
-
-uv run python $GENERATOR -t basic/README.md -o README.md -c $CONFIG
-uv run python $GENERATOR -t basic/CHANGELOG.md -o CHANGELOG.md -c $CONFIG
-uv run python $GENERATOR -t architecture/ARCHITECTURE.md -o ARCHITECTURE.md -c $CONFIG
-
-echo "✅ 所有文档已生成"
-```
+**A**: 创建批量生成脚本（见场景 5），或使用配置文件依次生成。
 
 ### Q5: 如何更新已生成的文档？
 
-**A**: 直接编辑生成的文件，或重新运行生成器：
-
-```bash
-# 重新生成（提示覆盖）
-uv run python scripts/generate_doc.py \
-  --template basic/README.md \
-  --output README.md \
-  --config config.yaml
-```
+**A**: 直接编辑生成的文件，或重新运行生成器（会提示覆盖）。
 
 ### Q6: 支持哪些配置文件格式？
 
-**A**: 支持 YAML 和 JSON 格式：
-- YAML: `config.yaml`（推荐）
-- JSON: `config.json`
-
-示例见 [config.example.yaml](scripts/config.example.yaml)。
+**A**: 支持 YAML 和 JSON 格式，示例见 [config.example.yaml](scripts/config.example.yaml)。
 
 ---
 
@@ -366,9 +297,6 @@ uv run python scripts/generate_doc.py -t basic/README.md -o README.md -c config.
 
 # 标准化模板变量
 uv run python scripts/normalize_templates.py --templates-dir templates
-
-# 查看变量报告
-cat variable_report.md
 ```
 
 ## 模板速查
