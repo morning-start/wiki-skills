@@ -7,6 +7,8 @@
 | 模板 | 用途 | 变量说明 |
 |------|------|----------|
 | [document-review-checklist.md](./document-review-checklist.md) | 文档评审清单 | `{{document_name}}`, `{{reviewer}}`, `{{review_date}}` 等 |
+| [task-execution-template.md](./task-execution-template.md) | 任务执行模板 | `{{task_id}}`, `{{task_name}}`, `{{owner}}` 等 |
+| [acceptance-report-template.md](./acceptance-report-template.md) | 任务验收报告 | `{{task_id}}`, `{{acceptance_date}}`, `{{reviewers}}` 等 |
 | [lightweight-doc-management-process.md](./lightweight-doc-management-process.md) | 轻量级文档管理流程 | `{{team_name}}`, `{{process_steps}}`, `{{roles}}` 等 |
 
 ## 变量命名规范
