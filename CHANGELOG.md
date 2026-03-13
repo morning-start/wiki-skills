@@ -7,6 +7,40 @@
 
 ---
 
+## [2.3.0] - 2026-03-13
+
+### 优化
+
+- **优化 `project-wiki` 技能 (v7.1.0 → v8.0.0)** - 核心能力重构与文档简化
+  - **核心能力重构**: 从 7 个能力简化为 3 个（模板生成、文档管理、知识库）
+  - **文档简化**: SKILL.md 从 483 行降至 283 行（-41%）
+  - **参考文档精简**: 删除 11 个冗余文档，从 30+ 降至 19 个（-37%）
+  - **快速上手优化**: 从 5 分钟降至 3 分钟，简化为 3 步流程
+  - **目标用户明确**: 面向开发人员、技术负责人、项目经理
+  - **示例优化**: 精简为 5 个核心场景示例
+  - **FAQ 优化**: 精简为 6 个高频问题
+
+### 删除
+
+- 移除低频使用的项目类型指南（7 个）：
+  - frontend-project-guide.md, backend-project-guide.md, fullstack-project-guide.md
+  - mobile-project-guide.md, desktop-project-guide.md, cli-tui-project-guide.md, game-project-guide.md
+- 移除低频使用的知识处理文档（4 个）：
+  - extraction.md, knowledge-graph.md, management.md, project-type-recognition.md
+
+### 变更
+
+- 更新 `project-wiki/SKILL.md` - 重构为核心 3 能力，版本号 v7.1.0 → v8.0.0
+- 更新 `project-wiki/QUICKSTART.md` - 简化为 3 步快速开始
+- 更新 `project-wiki/references/` 目录 - 删除 11 个冗余文档
+- 更新 guides/README.md 和 knowledge/README.md 索引
+
+### 破坏性变更
+
+**BREAKING**: 移除了项目类型指南（frontend/backend/fullstack 等），如需相关指南请参考社区资源。
+
+---
+
 ## [2.2.0] - 2026-03-06
 
 ### 新增
