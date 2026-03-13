@@ -2,19 +2,15 @@
 
 本目录包含项目知识库，按类型分类组织。
 
-## 目录结构
+## 核心知识
 
-| 目录/文件                                                  | 说明                                       |
-| ---------------------------------------------------------- | ------------------------------------------ |
-| [patterns/](patterns/)                                     | 设计模式（23 种经典模式）                  |
-| [principles/](principles/)                                 | 设计原则（SOLID 等）                       |
-| [framework/](framework/)                                   | 框架知识（前端/后端/跨平台）               |
-| [extraction.md](extraction.md)                             | 知识提取：从代码中提取结构化知识           |
-| [knowledge-graph.md](knowledge-graph.md)                   | 知识图谱：知识关联和图结构管理             |
-| [management.md](management.md)                             | 知识管理：知识库生命周期管理               |
-| [consistency-rules.md](consistency-rules.md)               | 文档一致性规则：一致性检查规则和自动化建议 |
-| [project-type-recognition.md](project-type-recognition.md) | 项目类型识别：基于项目结构识别项目类型     |
-| [document-management-tools.md](document-management-tools.md) | 文档管理工具链：7 类工具推荐和集成示例 |
+| 文件 | 说明 |
+|------|------|
+| [frameworks.md](frameworks.md) | 技术框架速查 |
+| [patterns.md](patterns.md) | 设计模式速查 |
+| [principles.md](principles.md) | 设计原则速查 |
+| [consistency-rules.md](consistency-rules.md) | 一致性规则 |
+| [document-management-tools.md](document-management-tools.md) | 文档管理工具 |
 
 ## 设计模式
 
@@ -30,14 +26,14 @@
 
 - 适配器、桥接、组合、装饰器、享元、代理
 
-详见 [patterns/README.md](patterns/README.md)
+详见 [patterns.md](patterns.md)
 
 ## 设计原则
 
 - SOLID 六大原则
 - KISS、YAGNI、DRY 等
 
-详见 [principles/README.md](principles/README.md)
+详见 [principles.md](principles.md)
 
 ## 框架知识
 
@@ -53,39 +49,19 @@
 
 - Flutter、Electron、Tauri、Wails
 
-详见 [framework/index.md](framework/index.md)
+详见 [frameworks.md](frameworks.md)
 
-## 知识处理
-
-### 知识提取
-
-从代码中自动提取知识，包括代码结构、API 定义、依赖关系等
-
-详见 [extraction.md](extraction.md)
-
-### 知识图谱
-
-将知识组织为图结构，支持关联查询和知识发现
-
-详见 [knowledge-graph.md](knowledge-graph.md)
-
-### 知识管理
-
-知识库的创建、存储、检索、更新和归档
-
-详见 [management.md](management.md)
-
-### 一致性规则
+## 一致性规则
 
 文档一致性检查的规则、常见问题和自动化建议
 
 详见 [consistency-rules.md](consistency-rules.md)
 
-### 项目类型识别
+## 文档管理工具
 
-基于项目结构和技术栈自动识别项目类型
+文档管理工具链：7 类工具推荐和集成示例
 
-详见 [project-type-recognition.md](project-type-recognition.md)
+详见 [document-management-tools.md](document-management-tools.md)
 
 ## 使用说明
 
