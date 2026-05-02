@@ -1,7 +1,17 @@
 ---
 name: requirements-doc-gen
-description: 将粗糙业务描述转化为标准SRS/PRD文档，支持需求变更分析、多端需求管理与自主知识补全；当用户需要生成专业需求文档、优化现有文档、进行需求评估或管理复杂项目时使用
+version: 1.0.1
+description: "⚠️ DEPRECATED: 此技能已废弃，请使用 doc-orchestrator 代替。将粗糙业务描述转化为标准SRS/PRD文档，支持需求变更分析、多端需求管理"
+tags: [requirement, documentation, SRS, PRD, deprecated]
+deprecated: true
+deprecation_notice: "此技能已废弃，请使用 doc-orchestrator 代替。新技能提供五阶段文档生命周期管理、双轨格式协议、智能绘图、质量门禁、变更追溯链。"
+deprecation_date: "2026-05-02"
+replacement: "doc-orchestrator"
 ---
+
+> ⚠️ **此技能已废弃**
+> 
+> 请使用 [doc-orchestrator](../doc-orchestrator/SKILL.md) 代替。
 
 # 需求文档生成器
 

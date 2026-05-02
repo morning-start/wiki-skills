@@ -2,12 +2,27 @@
 name: api-doc-generator
 version: 1.3.0
 author: api-doc-generator
-description: 自动生成API文档，支持React/Vue/Angular/Svelte/Next.js/Nuxt.js等前端框架和Flask/FastAPI/Django/Express/NestJS/Spring Boot/Gin/Echo等后端框架
-tags: [api-doc, frontend, backend, documentation, automation]
+description: "⚠️ DEPRECATED: 此技能已废弃，请使用 doc-orchestrator 代替。自动生成API文档，支持React/Vue/Angular/Svelte/Next.js/Nuxt.js等前端框架和Flask/FastAPI/Django/Express/NestJS/Spring Boot/Gin/Echo等后端框架"
+tags: [api-doc, frontend, backend, documentation, automation, deprecated]
+deprecated: true
+deprecation_notice: "此技能已废弃，请使用 doc-orchestrator 代替。新功能包括：五阶段文档生命周期管理、双轨格式协议、智能绘图、质量门禁、变更追溯链。"
+deprecation_date: "2026-05-02"
+replacement: "doc-orchestrator"
 dependency:
   python:
     - ast
 ---
+
+> ⚠️ **此技能已废弃**
+> 
+> 请使用 [doc-orchestrator](../doc-orchestrator/SKILL.md) 代替。
+> 
+> 新技能提供：
+> - 🔄 五阶段文档生命周期管理（分析→规划→生产→质量→维护）
+> - 📝 双轨格式协议（Agent 结构化 + 人类可读）
+> - 🎨 智能绘图（TXT/Mermaid 自适应）
+> - ✅ 质量门禁（5 维度评分）
+> - 🔗 变更追溯链
 
 # API 文档自动生成器
 

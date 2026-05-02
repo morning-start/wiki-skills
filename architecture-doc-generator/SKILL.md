@@ -1,10 +1,18 @@
 ---
 name: architecture-doc-generator
-version: v1.0.0
+version: 1.0.1
 author: skill-manager
-description: 根据SRS/PRD生成SAD/TDD/平台架构文档；当用户需要生成系统架构设计、技术方案设计或平台专项架构文档时使用
-tags: [architecture, documentation, SAD, TDD, design]
+description: "⚠️ DEPRECATED: 此技能已废弃，请使用 doc-orchestrator 代替。根据SRS/PRD生成SAD/TDD/平台架构文档"
+tags: [architecture, documentation, SAD, TDD, design, deprecated]
+deprecated: true
+deprecation_notice: "此技能已废弃，请使用 doc-orchestrator 代替。新技能提供五阶段文档生命周期管理、双轨格式协议、智能绘图、质量门禁。"
+deprecation_date: "2026-05-02"
+replacement: "doc-orchestrator"
 ---
+
+> ⚠️ **此技能已废弃**
+> 
+> 请使用 [doc-orchestrator](../doc-orchestrator/SKILL.md) 代替。
 
 # 架构设计文档生成器
 

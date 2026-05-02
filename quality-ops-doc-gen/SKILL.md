@@ -1,7 +1,17 @@
 ---
 name: quality-ops-doc-gen
-description: 生成和优化质量与运维类文档（测试策略、部署运维、安全合规），支持多端场景、自主知识补全与需求变更分析；当用户需要生成测试文档、运维手册、安全合规文档或优化现有质量运维文档时使用
+version: 1.0.1
+description: "⚠️ DEPRECATED: 此技能已废弃，请使用 doc-orchestrator 代替。生成和优化质量与运维类文档（测试策略、部署运维、安全合规）"
+tags: [testing, deployment, operations, security, compliance, deprecated]
+deprecated: true
+deprecation_notice: "此技能已废弃，请使用 doc-orchestrator 代替。新技能提供五阶段文档生命周期管理、双轨格式协议、智能绘图、质量门禁。"
+deprecation_date: "2026-05-02"
+replacement: "doc-orchestrator"
 ---
+
+> ⚠️ **此技能已废弃**
+> 
+> 请使用 [doc-orchestrator](../doc-orchestrator/SKILL.md) 代替。
 
 # 质量与运维文档生成器
 

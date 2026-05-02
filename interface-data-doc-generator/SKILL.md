@@ -1,9 +1,17 @@
 ---
 name: interface-data-doc-generator
-version: 1.0.0
-description: 接口与数据文档生成器，自动生成API文档、数据库设计文档和通信协议规范，支持多语言多架构和文档优化分析
-tags: [api-doc, database-doc, protocol, documentation, generator, validation]
+version: 1.0.1
+description: "⚠️ DEPRECATED: 此技能已废弃，请使用 doc-orchestrator 代替。接口与数据文档生成器，自动生成API文档、数据库设计文档和通信协议规范"
+tags: [api-doc, database-doc, protocol, documentation, generator, validation, deprecated]
+deprecated: true
+deprecation_notice: "此技能已废弃，请使用 doc-orchestrator 代替。新技能提供五阶段文档生命周期管理、双轨格式协议、智能绘图、质量门禁。"
+deprecation_date: "2026-05-02"
+replacement: "doc-orchestrator"
 ---
+
+> ⚠️ **此技能已废弃**
+> 
+> 请使用 [doc-orchestrator](../doc-orchestrator/SKILL.md) 代替。
 
 # InterfaceDataDocGenerator - 接口与数据文档生成器
 

@@ -84,14 +84,28 @@ description: 技能描述
 
 ## 技能列表
 
-| 技能名称                                                    | 版本  | 描述                                                                                                                                        | 标签                                                   |
+### 🆕 推荐技能
+
+| 技能名称 | 版本 | 描述 | 标签 |
 | ----------------------------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| [project-wiki](./project-wiki/SKILL.md)                     | 8.0.0 | 面向开发人员的项目文档助手，提供模板化文档生成、标准化文档流程和实用知识库查询，帮助快速创建和维护高质量项目文档                            | documentation, templates, generator, knowledge-base    |
-| [api-doc-generator](./api-doc-generator/SKILL.md)           | 1.3.0 | 自动生成 API 文档，支持 React/Vue/Angular/Svelte/Next.js/Nuxt.js 等前端框架和 Flask/FastAPI/Django/Express/NestJS/Spring Boot/Gin/Echo 等后端框架 | api-doc, frontend, backend, documentation, automation  |
-| [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力                                                                            | design-pattern, architecture, code-review, refactoring |
-| [interface-data-doc-generator](./interface-data-doc-generator/SKILL.md) | 1.0.0 | 接口与数据文档生成器，自动生成 API 文档、数据库设计文档和通信协议规范，支持多语言多架构和文档优化分析                                          | api-doc, database-doc, protocol, documentation, generator, validation |
-| [requirements-doc-gen](./requirements-doc-gen/SKILL.md)     | 1.0.0 | 将粗糙业务描述转化为标准 SRS/PRD 文档，支持需求变更分析、多端需求管理与自主知识补全                                                              | requirements, srs, prd, documentation, automation     |
-| [quality-ops-doc-gen](./quality-ops-doc-gen/SKILL.md)       | 1.0.0 | 生成和优化质量与运维类文档（测试策略、部署运维、安全合规），支持多端场景、自主知识补全与需求变更分析                                              | testing, deployment, operations, security, compliance  |
+| [doc-orchestrator](./doc-orchestrator/SKILL.md) | 0.1.0 | **文档编排操盘手** - 全生命周期管理软件开发文档，五阶段流水线（分析→规划→生产→质量→维护），双轨格式协议，智能绘图，质量门禁，变更追溯链 | documentation, orchestration, lifecycle, quality, automation |
+
+### 📋 其他技能
+
+| 技能名称 | 版本 | 描述 | 标签 |
+| ----------------------------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [project-wiki](./project-wiki/SKILL.md) | 8.0.0 | 面向开发人员的项目文档助手，提供模板化文档生成、标准化文档流程和实用知识库查询 | documentation, templates, generator, knowledge-base |
+| [design-pattern-advisor](./design-pattern-advisor/SKILL.md) | 1.1.0 | 智能设计模式顾问，提供设计模式识别、推荐、代码优化和架构审查能力 | design-pattern, architecture, code-review, refactoring |
+
+### ⚠️ 已废弃技能（请使用 doc-orchestrator 代替）
+
+| 技能名称 | 版本 | 替代方案 |
+| ----------------------------------------------------------- | ----- | ----- |
+| ~~[api-doc-generator](./api-doc-generator/SKILL.md)~~ | 1.3.0 | [doc-orchestrator](./doc-orchestrator/SKILL.md) |
+| ~~[architecture-doc-generator](./architecture-doc-generator/SKILL.md)~~ | 1.0.1 | [doc-orchestrator](./doc-orchestrator/SKILL.md) |
+| ~~[interface-data-doc-generator](./interface-data-doc-generator/SKILL.md)~~ | 1.0.1 | [doc-orchestrator](./doc-orchestrator/SKILL.md) |
+| ~~[requirements-doc-gen](./requirements-doc-gen/SKILL.md)~~ | 1.0.1 | [doc-orchestrator](./doc-orchestrator/SKILL.md) |
+| ~~[quality-ops-doc-gen](./quality-ops-doc-gen/SKILL.md)~~ | 1.0.1 | [doc-orchestrator](./doc-orchestrator/SKILL.md) |
 
 ## 文档
 
